@@ -22,7 +22,7 @@ public class Product {
 
     // Pievieno produktu
     public static boolean add(String name, double price, int categoryId) throws SQLException {
-        String sql = "INSERT INTO products (name, price, category_id) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO products (name,  price,  category_id) VALUES (?, ?, ?)";
         try (PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql)) {
             ps.setString(1, name.trim());
             ps.setDouble(2, price);

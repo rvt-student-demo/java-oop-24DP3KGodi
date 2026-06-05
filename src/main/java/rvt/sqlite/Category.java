@@ -17,7 +17,6 @@ public class Category {
     public int getId() { return id; }
     public String getName() { return name; }
 
-    // Pievieno kategoriju
     public static boolean add(String name) throws SQLException {
         String sql = "INSERT INTO categories (name) VALUES (?)";
         try (PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql)) {
@@ -26,7 +25,6 @@ public class Category {
         }
     }
 
-    // Atgriez visas kategorijas
     public static List<Category> getAll() throws SQLException {
         List<Category> list = new ArrayList<>();
         String sql = "SELECT id, name FROM categories ORDER BY id";
@@ -39,7 +37,6 @@ public class Category {
         return list;
     }
 
-    // Pārbauda vai kategorija eksistē
     public static boolean exists(int id) throws SQLException {
         String sql = "SELECT 1 FROM categories WHERE id = ?";
         try (PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql)) {

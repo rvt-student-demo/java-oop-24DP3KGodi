@@ -23,7 +23,7 @@ public class Main {
             System.out.println("3 - Paradit visas kategorijas");
             System.out.println("4 - Paradit visus produktus");
             System.out.println("5 - Meklet produktus pec kategorijas");
-            System.out.println("0 - Iziet");
+            System.out.println("0 - Iziet" );
             System.out.print("Izvele: ");
 
             String choice = scanner.nextLine();

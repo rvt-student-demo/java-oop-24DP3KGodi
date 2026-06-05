@@ -34,7 +34,7 @@ public class DatabaseConnection {
         try (Statement stmt = getConnection().createStatement()) {
             stmt.execute(createCategories);
             stmt.execute(createProducts);
-            System.out.println("Datubaze inicializeta!");
+            System.out.println("Datubaze inicializeta !");
         }
     }
 
