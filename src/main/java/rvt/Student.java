@@ -1,24 +1,30 @@
 package rvt;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class Student extends Person {
-    private int credits;
+public class student {
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String personalCode;
+    private String registrationDate;
 
-    public Student(String name, String address) {
-        super(name, address);
-        this.credits = 0;
+    public void Student(String firstName, String lastName, String email, String personalCode) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.personalCode = personalCode;
+        this.registrationDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
-    public int getCredits() {
-        return this.credits;
-    }
+    
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getEmail() { return email; }
+    public String getPersonalCode() { return personalCode; }
+    public String getRegistrationDate() { return registrationDate; }
 
-    public void study() {
-        this.credits += 1;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + " (" + getAddress() + ") has " + this.credits + " credits";
+     public String toCSV() {
+        return String.join(",", firstName, lastName, email, personalCode, registrationDate);
     }
 }
-   
